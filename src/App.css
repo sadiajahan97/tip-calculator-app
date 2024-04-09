@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --STRONG_CYAN: hsl(172, 67%, 45%);
+  --VERY_DARK_CYAN: hsl(183, 100%, 15%);
+  --DARK_GRAYISH_CYAN: hsl(186, 14%, 43%);
+  --GRAYISH_CYAN: hsl(184, 14%, 56%);
+  --LIGHT_GRAYISH_CYAN: hsl(185, 41%, 84%);
+  --VERY_LIGHT_GRAYISH_CYAN: hsl(189, 41%, 97%);
+  --WHITE: hsl(0, 0%, 100%);
+}
+
+.body {
+  background-color: var(--LIGHT_GRAYISH_CYAN);
+}
+
+/* Styles for Header */
+
+header {
+  padding: 2rem;
+  text-align: center;
+}
+
+main {
+  background-color: var(--WHITE);
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  color: var(--DARK_GRAYISH_CYAN);
+  display: grid;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.main {
+  display: grid;
+  gap: 2rem;
+  margin-inline: 2rem;
+}
+
+/* Styles for BillInput and NumberOfPeopleInput */
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+.error {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error p {
+  color: red;
+}
+
+.inputDisplay {
+  align-items: center;
+  background-color: var(--VERY_LIGHT_GRAYISH_CYAN);
+  border-radius: 0.25rem;
+  display: flex;
+  padding: 0.5rem 0.25rem 0.5rem 1rem;
+}
+
+.input {
+  background-color: inherit;
+  border: none;
+  caret-color: var(--STRONG_CYAN);
+  color: var(--VERY_DARK_CYAN);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  text-align: right;
+  width: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--GRAYISH_CYAN);
+}
+
+/* Styles for TipInput */
+
+fieldset {
+  border: none;
+}
+
+legend {
+  margin-bottom: 1rem;
+}
+
+.tipButtons {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.tip {
+  background-color: var(--VERY_DARK_CYAN);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--WHITE);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.tip:hover, .tip:focus {
+  background-color: var(--LIGHT_GRAYISH_CYAN);
+  color: var(--VERY_DARK_CYAN);
+  outline: none;
+}
+
+.customTip {
+  background-color: var(--VERY_LIGHT_GRAYISH_CYAN);
+  border: none;
+  border-radius: 0.25rem;
+  caret-color: var(--STRONG_CYAN);
+  color: var(--VERY_DARK_CYAN);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  text-align: right;
+  width: 100%;
+}
+
+.customTip:hover, .customTip:focus {
+  outline: var(--STRONG_CYAN) solid 2px;
+}
+
+.customTip::placeholder {
+  color: var(--DARK_GRAYISH_CYAN);
+}
+
+/* Styles for Output */
+
+section {
+  background-color: var(--VERY_DARK_CYAN);
+  border-radius: 1rem;
+  display: grid;
+  gap: 2rem;
+  margin-inline: 1.5rem;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.outputDisplay {
+  align-items: center;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.outputLabel {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: var(--WHITE);
+}
+
+.unit {
+  color: var(--GRAYISH_CYAN);
+}
+
+.output {
+  color: var(--STRONG_CYAN);
+  font-size: 2rem;
+  text-align: right;
+}
+
+.reset {
+  background-color: var(--STRONG_CYAN);
+  border: none;
+  border-radius: 0.25rem;
+  color: var(--VERY_DARK_CYAN);
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+.reset:hover, .reset:focus {
+  background-color: var(--LIGHT_GRAYISH_CYAN);
+  outline: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 0.75rem;
+    width: 85%;
+  }
+
+  .main {
+    margin-left: 2.5rem;
+    margin-right: 0;
+  }
+
+  .tipButtons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0;
+    margin-right: 2rem;
+    padding: 3.25rem 2rem 2rem;
+  }
+
+  .outputDisplay {
+    gap: 3rem;
+  }
+}
